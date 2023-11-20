@@ -17,7 +17,7 @@ main(function() {  }); // function() {  } -> 다른 함수의 인자로 전달�
 // 서버에서 데이터를 받아오는 비동기적 함수
 
 function getData(callback) { // 매개변수로 callback() 를 전달 받게 함
-    setTimeout(() => {
+    setTimeout(() => { // setTimeout도 비동개 콜백을 사용하는 함수
         console.log('서버에 데이터를 받아왔어요'); // 네트워크 통신
         callback()
     }, 2000); // 2초후
