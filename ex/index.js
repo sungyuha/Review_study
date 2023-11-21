@@ -32,3 +32,9 @@ login('코딩', (username) => { // username을 매개변수로 전달 받음
         });
     });
 });
+
+// 프로미스를 사용하면 콜백지옥에서 벗어날 수 있음
+// Promise : 자바스크립트 비동기 처리에 사용되는 객체, 비동기 요청을 보내면 성공 또는 실패가 다양한 형태로 발생
+login('코딩')
+    .then((result) => addToCart('감자'))
+    .then((product) => makePayment('0000000000000000', product))
