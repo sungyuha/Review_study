@@ -17,4 +17,4 @@ const ManyRendering = ( {onclick} ) => {
     );
 }
 
-export default ManyRendering;
+export default React.momo(ManyRendering); // React.memo로 render phase 최적화 ->  // props로 전달 받은 값이 바뀌자 않는한 렌더링을 할 필요가 없이 이렇게 저장하라는 것

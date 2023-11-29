@@ -15,6 +15,10 @@ const App = () => {
         onClick(); // useCallback안에 onClick을 감싸고
     }, []);
 
+    // 리액트는 랜더링 과정에서 2가지 페이즈를 거침
+    // 1. render phase : vitual DOM을 만들고, 실제 DOM과 비교해서 업데이트가 필요한 부분을 찾음
+    // 2. commit phase : 최적화를 할 수 있음 -> 실제 DOM 업데이트
+
     useEffect(() => {
         setTimeout(() => {
             setState(1);
@@ -24,7 +28,7 @@ const App = () => {
 
     return (
         <div>
-            <ManyRendering onClick={memoizationCallback} /> {/* onClick 안에 memoizationCallback 전달 */}
+            <ManyRendering onClick={memoizationCallback} /> {/* onClick 안에 memoizationCallback 전달 */} {/* Props는 이제 변경 안됨 */}
         </div>
     );
 }
