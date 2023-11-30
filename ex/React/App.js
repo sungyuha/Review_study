@@ -1,5 +1,3 @@
-// 리랜더링 줄이기 전략
-
 import {useCallback, useEffect, useMemo, useState} from 'react';
 import ManyRendering from './ManyRendering';
 
@@ -45,4 +43,5 @@ const App = () => {
 export default App;
 /**
  * 출처 : https://www.youtube.com/watch?v=HHKV9XbXUOw
+ * 리랜더링 줄이기 전략 -> 1) useCallback, 2) React.memo, 3) useMemo
  */
