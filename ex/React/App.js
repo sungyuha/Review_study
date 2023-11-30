@@ -1,4 +1,6 @@
-import {useCallback, useEffect, useState} from 'react';
+// 리랜더링 줄이기 전략
+
+import {useCallback, useEffect, useMemo, useState} from 'react';
 import ManyRendering from './ManyRendering';
 
 // 리랜더링
@@ -10,6 +12,13 @@ const App = () => {
     const [state, setState] = useState(0);
 
     const onClick = () => {}; // 함수나 값은 매번 App()이 다시 실행 될때마다 새로 생성
+
+    // 어떤 값을 Props로 전달해주고 싶을 때
+    const value = {a : 1};
+
+    const memoizationValue = useMemo(() => { // useMemo는 전달된 함수가 실행되고 반환된 결과를 캐싱함
+        return value; // 불필요한 랜더링 페이지들을 줄일 수 있음
+    }, []);
 
     const memoizationCallback = useCallback(() => { // useCallback은 리액트내에 어떤 메모리에 할당을 해놓음 -> 바뀌지 않음
         onClick(); // useCallback안에 onClick을 감싸고
