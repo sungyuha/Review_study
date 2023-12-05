@@ -9,6 +9,14 @@
  * 3) Rejected 실패
  */
 
-new promise = new Promise((res, rej) => { // 비동기 작업 성공 시 -> res 호출 / 비동기 작업 실패 시 -> rej 호출
-    console.log('비동기 작업');
+const promise = new Promise((resolve, reject) => { // 비동기 작업 성공 시 -> res 호출 / 비동기 작업 실패 시 -> rej 호출
+    setTimeout(() => {
+        const data = {name: '레이'};
+        console.log('네트워크 요청 성공');
+        resolve(data); // 비동기 작업 성공 시 만들어둔 객체가 호출
+    }, 1000);
 });
+
+setTimeout(() => {
+    console.log(promise);
+}, 2000);
