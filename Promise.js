@@ -44,11 +44,11 @@ setTimeout(() => {
 
 
 // Promise를 사용하는 비동기 함수 만들기
-function getData() {
+/* function getData() {
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             const data = {name: '레이'};
-            // const data = null
+            // const data = null;
             if(data) {
                 // 데이터를 성공적으로 받아올 때
                 console.log('네트워크 요청 성공');
@@ -73,9 +73,44 @@ function getData() {
 }, 2000); */
 
 // Promise를 반환하는 비동기 함수 사용
-getData().then((data) => { // then 이라는 메소드를 가지고 있는데 콜백함수를 전달 받음
+/* getData().then((data) => { // then 이라는 메소드를 가지고 있는데 콜백함수를 전달 받음
     // 비동기 후처리 작업
     // console.log('완료!', data);
     const name = data.name;
-    console.log(`${name}님 안녕하세요.`);
+    console.log(`${name}님 안녕하세요.`); // 후처리 코드
 });
+*/
+
+// 비동기 처리 도중에 문제가 발생하여 Promise가 실패하는 경우
+
+function getData() {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // const data = {name: '레이'};
+            const data = null;
+            if(data) {
+                // 데이터를 성공적으로 받아올 때
+                console.log('네트워크 요청 성공');
+                resolve(data)
+            } else {
+                // 비동기 작업이 왜 실패했는지 알려주는 에러 객체
+                reject(new Error('네트워크 문제!!!'))
+            }
+        }, 1000);
+    });
+    
+    return promise;
+}
+
+getData()
+    .then((data) => {
+        const name = data.name;
+        console.log(`${name}님 환영합니다.`)
+    })
+    .catch((error) => { // 에러 처리는 catch(), catch도 콜백함수를 전달 받음
+        // promise가 실패한 에러 처리
+        console.log('error처리 했습니다.');
+    }).finally(() => { // promise가 성공이든 실패든 무조건 실행되어야 할때 사용 -> 즉, promise의 성공여부와 상관없이 제일 마지막에 호출
+        // 마무리 작업
+        console.log('마무리 작업입니다.');
+    });
