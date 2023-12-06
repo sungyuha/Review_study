@@ -63,9 +63,19 @@ function getData() {
     return promise;
 }
 
-// getData() 호출
-const promise = getData();
 
-setTimeout(() => {
+// Promise는 then(), catch(), finally() API제공
+// const promise = getData(); // getData() 호출
+
+// Promise 객체를 호출
+/* setTimeout(() => {
     console.log(promise);
-}, 2000);
+}, 2000); */
+
+// Promise를 반환하는 비동기 함수 사용
+getData().then((data) => { // then 이라는 메소드를 가지고 있는데 콜백함수를 전달 받음
+    // 비동기 후처리 작업
+    // console.log('완료!', data);
+    const name = data.name;
+    console.log(`${name}님 안녕하세요.`)
+})
