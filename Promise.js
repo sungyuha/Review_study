@@ -77,5 +77,5 @@ getData().then((data) => { // then 이라는 메소드를 가지고 있는데 �
     // 비동기 후처리 작업
     // console.log('완료!', data);
     const name = data.name;
-    console.log(`${name}님 안녕하세요.`)
-})
+    console.log(`${name}님 안녕하세요.`);
+});
