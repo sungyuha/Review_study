@@ -102,7 +102,7 @@ function getData() {
     return promise;
 }
 
-getData()
+/* getData()
     .then((data) => {
         const name = data.name;
         console.log(`${name}님 환영합니다.`)
@@ -113,4 +113,14 @@ getData()
     }).finally(() => { // promise가 성공이든 실패든 무조건 실행되어야 할때 사용 -> 즉, promise의 성공여부와 상관없이 제일 마지막에 호출
         // 마무리 작업
         console.log('마무리 작업입니다.');
-    });
+    }); */ 
+
+// Promise Chaining
+const promise = getData();
+// promise.then().then().then() // 여러개의 비동기 작업을 순서대로 실행 가능
+promise
+    .then((data) => {getData()})
+    .then((data) => {getData()})
+    .then((data) => {getData()})
+    .then((data) => {getData()})
+    .then(console.log);
