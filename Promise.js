@@ -9,13 +9,62 @@
  * 3) Rejected 실패
  */
 
-const promise = new Promise((resolve, reject) => { // 비동기 작업 성공 시 -> res 호출 / 비동기 작업 실패 시 -> rej 호출
+/* const promise = new Promise((resolve, reject) => { // 비동기 작업 성공 시 -> res 호출 / 비동기 작업 실패 시 -> rej 호출
     setTimeout(() => {
         const data = {name: '레이'};
         console.log('네트워크 요청 성공');
         resolve(data); // 비동기 작업 성공 시 만들어둔 객체가 호출
     }, 1000);
 });
+
+setTimeout(() => {
+    console.log(promise);
+}, 2000); */
+
+/*
+// 비동기 작업이 실패하는 경우
+// 서버에서 데이터를 받아오지 못할 때
+const promise2 = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const data = null
+        if(data) {
+            // 데이터를 성공적으로 받아올 때
+            console.log('네트워크 요청 성공');
+            resolve(data)
+        } else {
+            // 비동기 작업이 왜 실패했는지 알려주는 에러 객체
+            reject(new Error('네트워크 문제!!!'))
+        }
+    }, 1000);
+});
+
+setTimeout(() => {
+    console.log(promise);
+}, 2000); */
+
+
+// Promise를 사용하는 비동기 함수 만들기
+function getData() {
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const data = {name: '레이'};
+            // const data = null
+            if(data) {
+                // 데이터를 성공적으로 받아올 때
+                console.log('네트워크 요청 성공');
+                resolve(data)
+            } else {
+                // 비동기 작업이 왜 실패했는지 알려주는 에러 객체
+                reject(new Error('네트워크 문제!!!'))
+            }
+        }, 1000);
+    });
+    
+    return promise;
+}
+
+// getData() 호출
+const promise = getData();
 
 setTimeout(() => {
     console.log(promise);
