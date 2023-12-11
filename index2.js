@@ -16,7 +16,7 @@ login('코딩').then((username) => {
     console.log(`${username}님 안녕하세요`);
 }) 
 .catch((error) => {
-
+    
 })*/
 
 
