@@ -65,7 +65,7 @@ function charCount(str) {
     // 다음에 마지막에 객체를 반환
 }
 
-// 정규식
+// 정규표현식
 function charCount(str) {
     let obj = {};
     for (let char of str) {

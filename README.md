@@ -4,7 +4,7 @@
   - 비동기 콜백
   - Promise
   - Promise Chaining
-  - 정규식
+  - 정규표현식
   - Fetch API
   - useCallback
   - React.memo
