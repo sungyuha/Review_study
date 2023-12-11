@@ -39,8 +39,26 @@ login('감자').then((product) => {
 }); */
 
 // 3. 결제하기
-function makePayment(cardNum, product, callback) {
-    setTimeout(() => {
-        callback(cardNum, product);
-    }, 1000);
+function makePayment(cardNum, product) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if(cardNum.length !== 16) {
+                reject(new Error('잘못된 카드 번호 입니다.'));
+                return;
+            }
+
+            if(!product) {
+                reject(new Error('결제할 상품을 넣어주세요'));
+                return;
+            }
+
+            resolve(product);
+        }, 1000);
+    });
 }
+
+/*makePayment('1234123412341234', '감자')
+    .then((product) => {
+        console.log(`${product}를 결제했습니다`);
+    })
+    .catch((error) => console.log(error));*/
