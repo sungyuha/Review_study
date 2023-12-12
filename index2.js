@@ -1,3 +1,4 @@
+// 온라인 쇼핑몰 시나리오 로직
 // 1. 로그인
 function login(username) {
     return new Promise((resolve, reject) => {
@@ -51,7 +52,6 @@ function makePayment(cardNum, product) {
                 reject(new Error('결제할 상품을 넣어주세요'));
                 return;
             }
-
             resolve(product);
         }, 1000);
     });
@@ -62,3 +62,20 @@ function makePayment(cardNum, product) {
         console.log(`${product}를 결제했습니다`);
     })
     .catch((error) => console.log(error));*/
+
+// Promise Chaining으로 각각의 로직 호출
+login('코딩')
+    .then((username) => {
+        console.log(`${username}님 환영합니다`);
+        return addToCart('감자');
+    })
+    .then((product) => {
+        console.log(`${product}를 장바구니에 넣었습니다`);
+        return makePayment('1234123412341234', product);
+    })
+    .then((product) => {
+        console.log(`${product} 결제를 완료했습니다`);
+    })
+    .catch((error) => {
+        console.log(error.message);
+    });
