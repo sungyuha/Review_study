@@ -87,3 +87,13 @@ login('코딩')
     .finally(() => {
         console.log('마무리 작업');
     });
+
+// 가독성이 높게 로직 작성
+login('')
+    .catch(() => {return '익명'})
+    .then((username) => addToCart(''))
+    .catch(() => '옥수수')
+    .then((product) => makePayment('1234123412341234', product))
+    .then(console.log)
+    .catch((error) =>console.log(error.message))
+    .finally(() => console.log('마무리 작업'));
