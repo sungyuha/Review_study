@@ -63,11 +63,16 @@ function makePayment(cardNum, product) {
     })
     .catch((error) => console.log(error));*/
 
+
 // Promise Chaining으로 각각의 로직 호출
 login('코딩')
+    /* .catch(() => {
+        return '익명';
+    })*/
     .then((username) => {
         console.log(`${username}님 환영합니다`);
         return addToCart('감자');
+        // return addToCart('');
     })
     .then((product) => {
         console.log(`${product}를 장바구니에 넣었습니다`);
@@ -78,4 +83,7 @@ login('코딩')
     })
     .catch((error) => {
         console.log(error.message);
+    })
+    .finally(() => {
+        console.log('마무리 작업');
     });
