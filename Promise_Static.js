@@ -7,7 +7,7 @@
 
 
 function getName() {
-    return new Primose((resolve, reject) => {
+    return new promise((resolve, reject) => {
         setTimeout(() => {
             resolve('민철');
             // reject(new Error('에러: 이름이 없습니다'));
@@ -16,7 +16,7 @@ function getName() {
 }
 
 function getTodo() {
-    return new Primose((resolve, reject) => {
+    return new promise((resolve, reject) => {
         setTimeout(() => {
             resolve('음악감상');
             // reject(new Error('에러: 할일이 없습니다'));
@@ -36,8 +36,20 @@ getName()
         console.log(todo);
     });*/
 
-// Promise.all() : 인자로 배열을 전달 받음 -> 그 배열 안에는 여러개의 Promise들을 넣어줄 수 있음
-const Primose = Promise.all([getName(), getTodo()]);
-Promise.then((data) => {
-    console.log(data);
-});
+    /*
+// Promise.all() : 인자로 배열을 전달 받음 -> 그 배열 안에는 여러개의 Promise들을 넣어줄 수 있음 / 반환 된 값이 하나라로 실패하면 바로 reject시켜버림
+const promise = Promise.all([getName(), getTodo()]);
+Promise
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });*/
+
+// Promise.allSettled() : Promise를 배열 형태로 전달 받음 / 전달 된 Promise들이 성공이던, 실패하던 완료 될 때까지 기다림 / 각각의 promise가 성공&실패했는지 세세하게 알려줌
+const promise = Promise.allSettled([getName(), getTodo()]);
+promise
+    .then((data) => {
+        console.log(data);
+    });
