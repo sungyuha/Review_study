@@ -3,6 +3,7 @@
 /**
  * Promise Static 함수들
  * Promise.all() : 여러개의 Promise들을 동시에 처리할 수 있음
+ * Promise.allSettled() : 전달 된 Promise들이 성공이던, 실패하던 완료 될 때까지 기다림 / 각각의 promise가 성공&실패했는지 세세하게 알려줌
  */
 
 
