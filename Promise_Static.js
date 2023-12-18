@@ -8,7 +8,7 @@
 
 
 function getName() {
-    return new promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('민철');
             // reject(new Error('에러: 이름이 없습니다'));
@@ -17,7 +17,7 @@ function getName() {
 }
 
 function getTodo() {
-    return new promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve('음악감상');
             // reject(new Error('에러: 할일이 없습니다'));
