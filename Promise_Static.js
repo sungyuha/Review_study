@@ -48,8 +48,17 @@ Promise
         console.log(error);
     });*/
 
+/*
 // Promise.allSettled() : Promise를 배열 형태로 전달 받음 / 전달 된 Promise들이 성공이던, 실패하던 완료 될 때까지 기다림 / 각각의 promise가 성공&실패했는지 세세하게 알려줌
 const promise = Promise.allSettled([getName(), getTodo()]);
+promise
+    .then((data) => {
+        console.log(data);
+    });*/
+
+// Promise.any() : 새로운 Promise를 리턴 / 인자로는 동일하게 Promise 베열 형태로 전달 받음 
+// Promise.any가 반환 하는 프로미스는 전달해준 프로미스들 중에 가장 먼저 resolve가 된 것에 값을 가지게 됨
+const promise = Promise.any([getName(), getTodo()]);
 promise
     .then((data) => {
         console.log(data);
