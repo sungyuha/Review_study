@@ -10,8 +10,8 @@
 function getName() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve('민철');
-            // reject(new Error('에러: 이름이 없습니다'));
+            // resolve('민철');
+            reject(new Error('에러: 이름이 없습니다'));
         }, 1000);
     });
 }
@@ -56,10 +56,24 @@ promise
         console.log(data);
     });*/
 
+/*
 // Promise.any() : 새로운 Promise를 리턴 / 인자로는 동일하게 Promise 베열 형태로 전달 받음 
 // Promise.any가 반환 하는 프로미스는 전달해준 프로미스들 중에 가장 먼저 resolve가 된 것에 값을 가지게 됨
 const promise = Promise.any([getName(), getTodo()]);
 promise
     .then((data) => {
         console.log(data);
+    })
+    .catch((error) => { // 모든 프로미스들이 실패해야지 반환 된 값이 실패값
+        console.log(error);
+    });*/
+
+// Promise.race() : 배열로 전달 된 모든 프로미스들끼리 달리기 시킴 / 이름 그대로처럼 race시킴 -> 성공하던 실패하던 상관없이 제일 처음의 프로미스의 상태를 반환
+const promise = Promise.race([getName(), getTodo()]);
+promise
+    .thena((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
     });
