@@ -6,6 +6,7 @@
   - Promise Chaining
   - Promise.all
   - Promise.allSettled
+  - Promise.any
   - Fetch API
   - useCallback
   - React.memo
