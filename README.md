@@ -7,6 +7,7 @@
   - Promise.all
   - Promise.allSettled
   - Promise.any
+  - Promise.race
   - Fetch API
   - useCallback
   - React.memo
