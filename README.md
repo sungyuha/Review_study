@@ -8,6 +8,7 @@
   - Promise.allSettled
   - Promise.any
   - Promise.race
+  - Async
   - Fetch API
   - useCallback
   - React.memo
