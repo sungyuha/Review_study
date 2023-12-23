@@ -9,6 +9,7 @@
   - Promise.any
   - Promise.race
   - Async
+  - Await
   - Fetch API
   - useCallback
   - React.memo
