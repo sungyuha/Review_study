@@ -32,6 +32,7 @@ async function getData() {
         user = '익명';
     }
 
+    // 호출
     const todo = await getTodo();
     console.log(`${user}님 ${todo}를 하세요`);
 }
