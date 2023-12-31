@@ -11,6 +11,7 @@
   - Async
   - Await
   - Fetch API
+  - This
   - useCallback
   - React.memo
   - useMemo
