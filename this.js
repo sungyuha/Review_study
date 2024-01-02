@@ -31,3 +31,4 @@ const object = { // 메소드는 객체의 속성으로 쏙 넣어진 함수를 
 };
 
 object.main(); 
+
