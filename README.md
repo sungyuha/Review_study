@@ -12,6 +12,7 @@
   - Await
   - Fetch API
   - This
+  - Bind
   - useCallback
   - React.memo
   - useMemo
