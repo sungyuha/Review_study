@@ -7,3 +7,13 @@ const mainBind = main.bind({name: 'Hello'}); // 넣어준 {name: 'Hello'}값이 
 mainBind();
 
 // Bind의 주의점!! -> 이미 bind된 걸 또 bind가 될 수 없음
+
+
+const object = {
+    name: '코딩',
+    main: function () {
+        console.log(this); // {name: '멋진 객체'}
+    }.bind({name: '멋진 객체'}),
+};
+
+object.main();

@@ -32,3 +32,10 @@ const object = { // 메소드는 객체의 속성으로 쏙 넣어진 함수를 
 
 object.main(); 
 
+
+// 함수를 DOM요소에 이벤트 처리기
+const button = document.getElementById('btn');
+
+button.addEventListener('click', function() {
+    console.log(this); // this값은 이벤트를 발사한 요소로 설정 됨
+});
