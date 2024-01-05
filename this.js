@@ -39,3 +39,39 @@ const button = document.getElementById('btn');
 button.addEventListener('click', function() {
     console.log(this); // this값은 이벤트를 발사한 요소로 설정 됨
 });
+
+
+/**
+전통적인 함수 문법
+ * 호출 방법에 따른 this 변화
+ * this를 고정하기위해 bind() 사용
+ */
+
+/**
+ * 화살표 함수 문법
+ * 더 간결한 함수 선언 문법
+ * this가 호출에 따라 바뀌지 않음
+ * 화살표 함수의 this값은 함수를 감싸는 스코프에 this를 그대로 가져와서 사용, 즉this를 외부에서 가져옴
+ * 화살표 함수의 this는 상위 스코프의 값을 가져오는 것
+ */
+
+/**
+ * 요약!!
+ * 화살표 함수는 선언 시점에 바인딩
+ * 함수 선언문은 실행 시점에 바인딩
+ */
+
+
+// 화살표 함수의 this
+const objected = {
+    name: '코딩',
+    main: function () {
+        console.log(this);
+    },
+    mainArrow: () => {
+        // window의 this값
+        console.log(this); // 화살표 함수의 this는 상위 스코프의 값을 가져오는 것
+    }
+};
+
+objected.mainArrow(); // objected
