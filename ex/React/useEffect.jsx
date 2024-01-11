@@ -14,10 +14,21 @@ function App() {
         setName(e.target.value);
     }
 
+    // 렌더링마다 매번 실행 됨 - 렌더링 이후
+    useEffect(() => {
+        console.log('렌더링 🎨');
+    });
+
     // 마운트 + [item] 변경될때마다 실행
+    // 마운팅 + count가 변경될때마다 실행
     useEffect(() => {
         console.log('count 변화 🎨');
     }, [count]);
+
+    // 마운팅 + name이 변경될때마다 실행
+    useEffect(() => {
+        console.log('name이 변화 🎈');
+    }, [name]);
 
     return (
         <div>
