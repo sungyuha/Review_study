@@ -13,6 +13,8 @@
   - Fetch API
   - This
   - Bind
+  - useState
+  - useEffect
   - useCallback
   - React.memo
   - useMemo
