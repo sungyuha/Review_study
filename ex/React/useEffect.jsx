@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react';
 
 function App() {
-    const [count, setCount] = useState(1);
+    /*const [count, setCount] = useState(1);
     const [name, setName] = useState('');
 
     const handleCountUpdate = () => {
@@ -12,8 +12,9 @@ function App() {
 
     const handleInputChange = (e) => { // 인자로는 e: 이벤트
         setName(e.target.value);
-    }
+    }*/
 
+    /*
     // 렌더링마다 매번 실행 됨 - 렌더링 이후
     useEffect(() => {
         console.log('렌더링 🎨');
@@ -29,13 +30,20 @@ function App() {
     useEffect(() => {
         console.log('name이 변화 🎈');
     }, [name]);
+    */
+
+    useEffect(() => {
+        // 마운팅 될때만 실행 됨
+        console.log('마운팅 🎵')
+    }, []);
 
     return (
         <div>
-            <button onClick={handleCountUpdate}>Update</button>
+            {/* <button onClick={handleCountUpdate}>Update</button>
             <span>count: {count}</span>
             <input type='text' value={name} onChange={handleInputChange} />
-            <span>name: {name}</span>
+            <span>name: {name}</span> */}
+            
         </div>
     );
 }
