@@ -10,7 +10,8 @@ const fruits = [
     {name: '🍋', price: 1000},
 ];
 
-const item = fruits.find((fruit, idx) => { // find는 콜백함수를 전달 받음
+// const item = fruits.find((fruit, idx) => { // find는 콜백함수를 전달 받음
+const item = fruits.findIndex((fruit, idx) => { // findIndex도 콜백함수를 전달 받음
     // 조건 : 가격이 정확히 500인 과일
     if(fruit.price === 500 && idx === 2 ) {
         return true;
@@ -19,3 +20,5 @@ const item = fruits.find((fruit, idx) => { // find는 콜백함수를 전달 받
 });
 
 console.log(item);
+
+// findIndex() : 요소의 index값을 반환, 조건을 만족하는 요소의 인덱스 값이라면 findIndex를 사용하면 됨
