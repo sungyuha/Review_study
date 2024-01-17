@@ -2,6 +2,7 @@
 
 // 배열 : 요소를 넣고 빼는거말고 다양한 함수를 제공
 
+/* 
 // find() : 배열에서 특정 조건을 만족하는 요소를 찾고 싶을 때 사용
 const fruits = [
     {name: '🍊', price: 300},
@@ -18,13 +19,13 @@ const item = fruits.findIndex((fruit, idx) => { // findIndex도 콜백함수를 
         return true;
     }
     return false;
-});
+}); */
 
 console.log(item);
 
 // findIndex() : 요소의 index값을 반환, 조건을 만족하는 요소의 인덱스 값이라면 findIndex를 사용하면 됨
 
-// some() : 배열 안에서 특정 조건을 만족하는 요소가 하나라도 있는지 확인하고 싶을 때
+// some() : 배열 안에서 특정 조건을 만족하는 요소가 하나라도 있는지 확인하고 싶을 때 사용
 const fruitss = [
     {name: '🍊', price: 300},
     {name: '🍌', price: 700},
@@ -40,3 +41,21 @@ fruitss.some((fruit) => {
 });
 
 console.log(doesExist);
+
+// every() : 배열 안에 있는 모든 요소들이 특정 조건을 만족하고 있는지 확인하고 싶을 때 사용
+
+const fruits = [
+    {name: '🍊', price: 300},
+    {name: '🍌', price: 700},
+    {name: '🍎', price: 500},
+    {name: '🍋', price: 1000},
+];
+
+const isOver = fruits.every((fruits) => {
+    if(fruits.price > 100) {
+        return true;
+    }
+    return false;
+});
+
+console.log(isOver);
