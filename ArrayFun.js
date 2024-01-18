@@ -59,3 +59,22 @@ const isOver = fruits.every((fruits) => {
 });
 
 console.log(isOver);
+
+// filter() : 배열에서 특정 조건을 만족하는 요소들만 빼내서 새로운 배열로 반환 -> 조건을 만족하는 것들로만 필터링 해줌
+// 필터 함수는 원본 배열을 변경하지 않고 새로운 배열을 만들어서 반환
+
+const itmes = [
+    {toy: 0, price: 400},
+    {toy: 1, price: 600},
+    {toy: 2, price: 200},
+    {toy: 3, price: 1100},
+];
+
+const isItem = itmes.filter((itme) => {
+    if(itme.price <= 500) {
+        return true;
+    }
+    return false;
+});
+
+console.log(isItem);
