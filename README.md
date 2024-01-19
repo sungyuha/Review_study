@@ -13,6 +13,9 @@
   - Fetch API
   - This
   - Bind
+  - find
+  - some
+  - filter
   - useState
   - useEffect
   - useCallback
