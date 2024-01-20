@@ -41,7 +41,7 @@ fruitss.some((fruit) => {
 });
 
 console.log(doesExist);
-
+/*
 // every() : 배열 안에 있는 모든 요소들이 특정 조건을 만족하고 있는지 확인하고 싶을 때 사용
 
 const fruits = [
@@ -59,6 +59,7 @@ const isOver = fruits.every((fruits) => {
 });
 
 console.log(isOver);
+*/
 
 // filter() : 배열에서 특정 조건을 만족하는 요소들만 빼내서 새로운 배열로 반환 -> 조건을 만족하는 것들로만 필터링 해줌
 // 필터 함수는 원본 배열을 변경하지 않고 새로운 배열을 만들어서 반환
@@ -78,3 +79,18 @@ const isItem = itmes.filter((itme) => {
 });
 
 console.log(isItem);
+
+// map() : 배열의 모든 원소를 돌면서 해당 요소에 관한 작업을 실행하는데, 새로운 배열을 반환
+
+const fruits = [
+    {name: '🍊', price: 300},
+    {name: '🍌', price: 700},
+    {name: '🍎', price: 500},
+    {name: '🍋', price: 1000},
+];
+
+const priceTaps = fruits.map((fruit) => {
+    return `${fruit.name}: ${fruit.price}원`;
+});
+
+console.log(priceTaps);
