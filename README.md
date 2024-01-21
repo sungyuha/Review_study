@@ -16,6 +16,7 @@
   - find
   - some
   - filter
+  - Map
   - useState
   - useEffect
   - useCallback
