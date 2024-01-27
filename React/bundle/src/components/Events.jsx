@@ -39,4 +39,11 @@ function Toggle(props) {
     );
 }
 
+// Arguments 전달하기 : 함수에 주장할 내용 -> 함수에 전달할 데이터 -> Event Handler에 전달할 데이터
+// Parameter : 매개변수 
+
+// 매개변수 이벤트 핸들러에 전달할 예제 코드
+// <button onClick={(event) => this.deleteItem(id, event)}>삭제하기</button>
+// <button onClick={this.deleteItem(this, id)}>삭제하기</button>
+
 export default Toggle;
