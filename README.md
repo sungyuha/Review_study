@@ -17,7 +17,7 @@
   - some
   - filter
   - Map
-  - Event & Event Handling
+  - Event Handling
   - useState
   - useEffect
   - useCallback
