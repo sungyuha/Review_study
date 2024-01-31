@@ -17,6 +17,7 @@
   - some
   - filter
   - Map
+  - Reduce
   - Event Handling
   - useState
   - useEffect
