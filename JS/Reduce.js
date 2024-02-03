@@ -18,7 +18,7 @@ const total = numbers.reduce((accumulator, currentValue) => { // 인자로 전�
 }, 0);*/
 
 // reduce - 가장 작은 요소 구하기
-const numbers = [10, 4, 2, 8];
+/*const numbers = [10, 4, 2, 8];
 
 const smallest = numbers.reduce((accumulator, currentValue) => {
     if (accumulator > currentValue) {
@@ -27,4 +27,25 @@ const smallest = numbers.reduce((accumulator, currentValue) => {
     return accumulator;
 }); // 초기값을 넣어주지 않으면 리듀서는 첫 번째 요소를 스킵하고, 두 번째 요소부터 실행 됨
 
-console.log(smallest);
+console.log(smallest);*/
+
+const cart = [
+    {
+        name: '사과',
+        price: 500,
+    },
+    {
+        name: '복숭아',
+        price: 700,
+    },
+    {
+        name: '자몽',
+        price: 300,
+    },
+];
+
+const total = cart.reduce((accumulator, fruit) => {
+    return accumulator + fruit.price;
+}, 0);
+
+console.log(total);
