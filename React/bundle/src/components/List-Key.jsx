@@ -31,3 +31,34 @@ ReactDOM.render(
 );
 
 // List의 Key : 아이템들을 구분하기 위한 고유한 문자열
+
+
+// 출석부 만들기
+import React from 'react';
+
+const students = [
+    {
+        name: 'Inje',
+    },
+    {
+        name: 'Steve',
+    },
+    {
+        name: 'SH',
+    },
+    {
+        name: 'Jeep',
+    },
+];
+
+function AttendanceBook(props) {
+    return (
+        <ul>
+            {students.map((student) => {
+                return <li>{student.name}</li>
+            })}
+        </ul>
+    );
+}
+
+export default AttendanceBook;
