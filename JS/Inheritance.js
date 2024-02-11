@@ -18,3 +18,20 @@ class FemaleIdoMedel extends IdolModel {
         return `${this.name}이 춤을 춥니다.`
     }
 }
+
+class MaleIdolModel extends IdolModel{
+    sing(){
+        return '남자 아이돌이 노래를 부릅니다.';
+    }
+}
+
+console.log(yuJin.dance());
+console.log(yuJin.name);
+
+console.log(jiMin.sing());
+console.log(jiMin.year);
+
+const cf = new IdolModel('코드팩토리', 1992);
+console.log(cf);
+
+console.log(cf.name);
