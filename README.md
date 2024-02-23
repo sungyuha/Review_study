@@ -21,6 +21,7 @@
   - useState
   - useEffect
   - useRef
+  - useId
   - useCallback
   - React.memo
   - useMemo

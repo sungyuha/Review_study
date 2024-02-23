@@ -11,7 +11,7 @@ const App = () => {
 }
 
 const MyInput = () => {
-    const id = useId(); // 장점 : 안정성
+    const id = useId(); // 장점 : 쌍점, SSR에서 안정성 // SSR(서버사이드 렌더링)이란 페이지를 서버에서 렌더링 한 후 클라이언트로 전달하는 방식 -> 클라이언트에서는 하이드레이션 과정을 통해서 상호작용이 가능한 페이지로 렌더링 함
     const ref = useRef();
     // console.log(id); // 접근성에 유용하게 사용
 
