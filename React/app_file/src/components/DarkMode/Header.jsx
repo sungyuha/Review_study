@@ -5,7 +5,7 @@ const Header = ({ isDark }) => {
         <header
             className='header'
             style={{
-                // 다크모드일때
+                // isDark가 기본은 fasle
                 backgroundColor: isDark ? 'black' : 'lightgray',
                 color: isDark ? 'white' : 'black',
             }}
