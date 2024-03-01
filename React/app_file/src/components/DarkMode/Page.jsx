@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const Page = ({ isDark, setIsDark }) => { // Props로 받아옴
+const Page = () => {
+
     return (
         <div className='page'>
-            <Header isDark={isDark} />
-            <Content isDark={isDark} />
-            <Footer isDark={isDark} setIsDark={setIsDark} />
+            <Header />
+            <Content />
+            <Footer />
         </div>
     );
 }

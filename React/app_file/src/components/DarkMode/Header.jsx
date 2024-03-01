@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from './context/ThemeContext';
 
-const Header = ({ isDark }) => {
+const Header = () => {
+    const {isDark} = useContext(ThemeContext); // props를 사용하지 않고 useContext로 데이터 받아옴
+
     return (
         <header
             className='header'

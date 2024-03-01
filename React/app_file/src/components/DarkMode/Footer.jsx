@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from './context/ThemeContext';
 
-const Header = ({ isDark, setIsDark }) => {
+const Header = () => {
+    const {isDark, setIsDark} = useContext(ThemeContext);
     const toggleTheme = () => {
         setIsDark(!isDark); // isDark가 false라면 ture로, ture라면 false로 바꿔줌
     };
