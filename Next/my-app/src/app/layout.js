@@ -1,5 +1,6 @@
 //'use client';
 // import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import './globals.css';
 
 /*export const metadata = {
@@ -10,7 +11,7 @@ import './globals.css';
 export default async function RootLayout({ children }) {
   // 서버 컴포넌트
   const resp = await fetch('http://localhost:9999/topics');
-  const topics = await.resp.json();
+  const topics = await resp.json();
 
   // const [topics, setTopics] = useState([]); // 클라이언트 컴포넌트여서 next에서는 에러가 발생
 
@@ -26,8 +27,9 @@ export default async function RootLayout({ children }) {
       <body>
         <h1><a href='/'>WEB</a></h1>
         <ol>
-          <li><a href='/read/1'>html</a></li>
-          <li><a href='/read/2'>css</a></li>
+          {topics.map((topic) => {
+            return <li key={topic.id}><Link href={`/read/${topic.id}`}>{topic.title}</Link></li>
+          })}
         </ol>
         <ol>
           {children}
