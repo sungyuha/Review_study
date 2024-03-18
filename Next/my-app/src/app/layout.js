@@ -10,7 +10,7 @@ import './globals.css';
 
 export default async function RootLayout({ children }) {
   // 서버 컴포넌트
-  const resp = await fetch('http://localhost:9999/topics');
+  const resp = await fetch('http://localhost:9999/topics', { cache: 'no-store' }); // 캐싱 정보를 저장하지 않음 -> 익숙해지면 캐싱 설정하기
   const topics = await resp.json();
 
   // const [topics, setTopics] = useState([]); // 클라이언트 컴포넌트여서 next에서는 에러가 발생
