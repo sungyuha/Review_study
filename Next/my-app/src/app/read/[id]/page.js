@@ -1,7 +1,7 @@
 // 다이나믹 라우팅
 
 export default async function Read(props) { // 서버 컴포넌트로 변경
-    const resp = await fetch(`http://localhost:9999/topics/${props.params.id}`);
+    const resp = await fetch(`http://localhost:9999/topics/${props.params.id}`, {cache: 'no-cache'});
     const topic = await resp.json();
     return (
         <>
