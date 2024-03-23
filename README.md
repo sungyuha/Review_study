@@ -1,6 +1,6 @@
 # Review_study
 
-- 복습 시리즈!
+- 복습 시리즈!ㅛ
   - Callback
   - Promise
   - Promise-Chaining
